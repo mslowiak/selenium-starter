@@ -1,0 +1,5 @@
+selenium\config\ChromeDriverManager.class
+selenium\config\DriverManager.class
+selenium\pages\LoginPage.class
+selenium\config\DriverType.class
+selenium\config\DriverManagerFactory.class
