@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import selenium.pages.LoginPage;
+import selenium.pages.BhpPage;
 
 class LoginTest extends BaseTestConfig {
 
@@ -12,18 +12,21 @@ class LoginTest extends BaseTestConfig {
 
     @BeforeEach
     void setUp() {
-        webDriver.get("https://www.phptravels.net/login");
+        webDriver.get("https://bhkszkolenia.cm-uj.krakow.pl/index.php/wejscie/adres/pl/6B6B61726F6C696E612E747572656B40676D61696C2E636F6D");
     }
 
     @Test
     void loginTest() {
-        LoginPage loginPage = new LoginPage(webDriver);
-        loginPage.login("user@phptravels.com", "demouser");
-        test.createNode("Credentials entered");
-        loginPage.clickLogin();
-        test.createNode("Login button clicked");
-        loginPage.waitForLogin();
-        test.createNode("Login complete");
+        BhpPage bhpPage = new BhpPage(webDriver);
+        while (true) {
+            bhpPage.clickNext();
+            try {
+                Thread.sleep(2000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
 
         /*
         @RunWith(Suite.class)
